@@ -9,6 +9,7 @@ public class Main {
         usuarioTest.agregarAlbum(album);
         usuarioTest.agregarCancionAAlbumExistente("album1", "pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
 
+        usuarioTest.verListaDeCancionesDelAlbum(album);
         System.out.println(usuarioTest.buscarAlbumesPorAnio("2000"));;
     }
 }

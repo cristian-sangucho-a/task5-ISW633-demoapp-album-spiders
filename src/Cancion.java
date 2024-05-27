@@ -23,9 +23,6 @@ public class Cancion {
         return titulo;
     }
 
-    private String getTitulo() {
-        return titulo;
-    }
 
     @Override
     public String toString() {

@@ -36,7 +36,7 @@ public class Album {
     }
 
     public void setArtista(String artista) {
-        artistas[artista.length -1] = artista;
+        artistas[artista.length() - 1] = artista;
     }
 
     public boolean verificarCancionRepetida(Cancion cancionAAgregar) {
