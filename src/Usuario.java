@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.util.ArrayList;
 
 public class Usuario {
@@ -8,7 +9,8 @@ public class Usuario {
         albumes = new ArrayList<Album>();
     }
 
-    public void agregarCancionAAlbumExistente(String albumDestino, Cancion cancionAAgregar) {
+    public void agregarCancionAAlbumExistente(String albumDestino, String titulo, Duration duracion, String artista) {
+        Cancion cancionAAgregar = new Cancion(titulo, duracion, artista);
         int index = obtenerIndexAlbumDeListaPorNombre(albumDestino);
         if (albumes.get(index) == null || albumes.get(index).verificarCancionRepetida(cancionAAgregar)){
             return;
