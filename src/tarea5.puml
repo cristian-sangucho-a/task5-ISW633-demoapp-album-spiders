@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Usuario {
+-nombre: String
++buscarAlbumPorAnio()
++agregarAlbum()
++agregarCancionaAlbumExistente()
++verListasDeCancionesPorAlbum()
+
+}
+class Album {
+-nombre:String
+-anioDeanzamiento:String
+-disquera:String
+-artistas:String[]
++agregarCancion()
++verificarNoRepetido()
+}
+class Cancion {
+-titulo: String
+-duracion: Duration
+-artista:String
++getDuracion()
+
+}
+
+Usuario "1" --> "*" Album
+Album  o--  Cancion
+
+
+
+@enduml
