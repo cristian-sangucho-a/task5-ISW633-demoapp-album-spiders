@@ -15,9 +15,12 @@ public class Cancion {
         return artista;
     }
 
-    @Override
-    public boolean equals(Object cancion) {
-        return this.getTitulo() == cancion.getTitulo() ;
+    public boolean equals(Cancion cancion) {
+        return this.getTitulo().equals(cancion.getTitulo()) ;
+    }
+
+    private String getTitulo() {
+        return titulo;
     }
 
     @Override

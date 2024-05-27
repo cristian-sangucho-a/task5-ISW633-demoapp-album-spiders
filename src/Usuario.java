@@ -33,6 +33,15 @@ public class Usuario {
         albumes.add(album);
     }
 
+    public ArrayList<Album> buscarAlbumesPorAnio(String anio) {
+        ArrayList<Album> resultadoBusquedaPorAnio = new ArrayList<Album>();
+        for (Album album: albumes){
+            if (album.getAnioDeanzamiento().equals(anio)) {
+                resultadoBusquedaPorAnio.add(album);
+            }
+        }
+        return resultadoBusquedaPorAnio;
+    }
     public void verListaDeCancionesDelAlbum(Album album) {
         album.getCanciones();
     }
