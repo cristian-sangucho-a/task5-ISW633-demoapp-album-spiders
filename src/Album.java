@@ -33,4 +33,25 @@ public class Album {
     public String getAnioDeanzamiento() {
         return anioDeanzamiento;
     }
+
+    public void setArtista(String artista) {
+        artistas[artista.length -1] = artista;
+    }
+
+    public boolean verificarCancionRepetida(Cancion cancionAAgregar) {
+        if (estaCancionYaExiste(cancionAAgregar)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean estaCancionYaExiste(Cancion cancionAAgregar) {
+        for (Cancion cancion : canciones) {
+            if (cancion.equals(cancionAAgregar)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

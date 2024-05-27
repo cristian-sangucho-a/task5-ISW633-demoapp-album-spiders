@@ -10,4 +10,13 @@ public class Cancion {
         this.duracion = duracion;
         this.artista = artista;
     }
+
+    public String getArtista() {
+        return artista;
+    }
+
+    @Override
+    public boolean equals(Object cancion) {
+        return this.getTitulo() == cancion.getTitulo() ;
+    }
 }

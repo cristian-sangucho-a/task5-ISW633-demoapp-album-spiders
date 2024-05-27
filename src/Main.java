@@ -8,7 +8,6 @@ public class Main {
 
         usuarioTest.agregarAlbum(album);
         usuarioTest.agregarCancionAAlbumExistente("album1", cancion);
-        usuarioTest.
     }
 }
 
