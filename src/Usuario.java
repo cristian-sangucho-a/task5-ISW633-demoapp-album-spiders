@@ -43,6 +43,7 @@ public class Usuario {
         return resultadoBusquedaPorAnio;
     }
     public void verListaDeCancionesDelAlbum(Album album) {
-        album.getCanciones();
+        int indexAlbumConsulta = obtenerIndexAlbumDeListaPorNombre(album.getTitulo());
+        albumes.get(indexAlbumConsulta).getCanciones();
     }
 }
