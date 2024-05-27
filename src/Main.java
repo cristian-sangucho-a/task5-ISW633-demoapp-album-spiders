@@ -6,8 +6,8 @@ public class Main {
         Album album = new Album("album1", "2000", "disquera1", new String[]{""});
         Cancion cancion = new Cancion("pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
 
-        usuarioTest.agregarAlbum("1", "2000", "polirecords", new String[]{""});
-        usuarioTest.agregarCancionaAlbumExistente("album1", cancion)
+        usuarioTest.agregarAlbum(album);
+        usuarioTest.agregarCancionaAlbumExistente("album1", cancion);
     }
 }
 
