@@ -33,4 +33,7 @@ public class Usuario {
         albumes.add(album);
     }
 
+    public void verListaDeCancionesDelAlbum(Album album) {
+        album.getCanciones();
+    }
 }

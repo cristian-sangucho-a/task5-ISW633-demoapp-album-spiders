@@ -19,4 +19,11 @@ public class Cancion {
     public boolean equals(Object cancion) {
         return this.getTitulo() == cancion.getTitulo() ;
     }
+
+    @Override
+    public String toString() {
+        return "Titulo de la cancion='" + titulo + '\'' +
+                "Duracion=" + duracion +
+                "Artista='" + artista + '\'';
+    }
 }
