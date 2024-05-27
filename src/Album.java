@@ -4,15 +4,16 @@ import java.util.Arrays;
 public class Album {
     private String titulo;
     private  String anioDeanzamiento;
-    private final String disquera;
-    private final String[] artistas;
+    private  String disquera;
+    private ArrayList<String> artistas;
     private ArrayList<Cancion> canciones;
 
     public Album(String titulo, String anioDeanzamiento, String disquera, String[] artistas) {
         this.titulo = titulo;
         this.anioDeanzamiento = anioDeanzamiento;
         this.disquera = disquera;
-        this.artistas = artistas;
+        this.artistas = new ArrayList<String>();
+        canciones = new ArrayList<Cancion>();
     }
 
     public void agregarCancion(Cancion cancionAAgregar){
@@ -23,7 +24,7 @@ public class Album {
         return titulo;
     }
 
-    public String[] getArtistas() {
+    public ArrayList<String> getArtistas() {
         return artistas;
     }
 
@@ -36,7 +37,7 @@ public class Album {
     }
 
     public void setArtista(String artista) {
-        artistas[artista.length() - 1] = artista;
+        artistas.add(artista);
     }
 
     public boolean verificarCancionRepetida(Cancion cancionAAgregar) {
@@ -62,6 +63,6 @@ public class Album {
 
     @Override
     public String toString() {
-        return "Album[ titulo: " + titulo + "| anioDeanzamiento: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + Arrays.toString(artistas) + "| canciones: " + canciones +" ]";
+        return "Album[ titulo: " + titulo + "| anioDeanzamiento: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + artistas + "| canciones: " + canciones +" ]";
     }
 }

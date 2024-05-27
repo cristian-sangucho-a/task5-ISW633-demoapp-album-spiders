@@ -12,7 +12,7 @@ public class Usuario {
     public void agregarCancionAAlbumExistente(String albumDestino, String titulo, Duration duracion, String artista) {
         Cancion cancionAAgregar = new Cancion(titulo, duracion, artista);
         int index = obtenerIndexAlbumDeListaPorNombre(albumDestino);
-        if (albumes.get(index) == null || albumes.get(index).verificarCancionRepetida(cancionAAgregar)){
+        if (albumes.isEmpty() || albumes.get(index).verificarCancionRepetida(cancionAAgregar)){
             return;
         }
         albumes.get(index).agregarCancion(cancionAAgregar);
@@ -42,7 +42,7 @@ public class Usuario {
         }
         return resultadoBusquedaPorAnio;
     }
-    public void verListaDeCancionesDelAlbum(Album album) {
-        album.getCanciones();
+    public ArrayList<Cancion> verListaDeCancionesDelAlbum(String titulo) {
+        return albumes.get(obtenerIndexAlbumDeListaPorNombre(titulo)).getCanciones();
     }
 }

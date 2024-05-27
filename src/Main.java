@@ -7,9 +7,11 @@ public class Main {
         Cancion cancion = new Cancion("pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
 
         usuarioTest.agregarAlbum(album);
-        usuarioTest.agregarCancionAAlbumExistente("album1", "pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
-
-        usuarioTest.verListaDeCancionesDelAlbum(album);
+        usuarioTest.agregarCancionAAlbumExistente("album1", "1", Duration.ofMinutes(2).plusSeconds(30), "autor");
+        usuarioTest.agregarCancionAAlbumExistente("album1", "1", Duration.ofMinutes(2).plusSeconds(30), "autor");
+        usuarioTest.agregarCancionAAlbumExistente("album1", "1", Duration.ofMinutes(2).plusSeconds(30), "autor");
+        usuarioTest.agregarCancionAAlbumExistente("album1", "2", Duration.ofMinutes(2).plusSeconds(30), "autor");
+        System.out.println(usuarioTest.verListaDeCancionesDelAlbum("album1"));;
         System.out.println(usuarioTest.buscarAlbumesPorAnio("2000"));;
     }
 }
