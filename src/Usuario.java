@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Usuario {
     private String nombre;
     private ArrayList<Album> albumes;
     public Usuario(String nombre) {
         this.nombre = nombre;
-        albumes = new Arraylist<Album>();
+        albumes = new ArrayList<Album>();
     }
 
     public void agregarCancionAAlbumExistente(String albumDestino, Cancion cancionAAgregar) {
