@@ -9,22 +9,26 @@ public class Usuario {
     }
 
     public void agregarCancionAAlbumExistente(String albumDestino, Cancion cancionAAgregar) {
-        if (obtenerAlbumDeListaPorNombre(albumDestino) != null){
-            obtenerAlbumDeListaPorNombre(albumDestino).agregarCancion(cancionAAgregar);
+        int index = obtenerIndexAlbumDeListaPorNombre(albumDestino);
+        if (albumes.get(index) == null || albumes.get(index).verificarCancionRepetida(cancionAAgregar)){
+            return;
         }
+        albumes.get(index).agregarCancion(cancionAAgregar);
+        albumes.get(index).setArtista(cancionAAgregar.getArtista());
 
     }
 
-    public Album obtenerAlbumDeListaPorNombre(String nombreAlbum){
-        for (Album album : albumes) {
-            if (album.getTitulo().equals(nombreAlbum)){
-                return album;
+    public int obtenerIndexAlbumDeListaPorNombre(String nombreAlbum){
+        for (int i = 0; i < albumes.size(); i++) {
+            if (albumes.get(i).getTitulo().equals(nombreAlbum)){
+                return i;
             }
         }
-        return null;
+        return -1;
     }
 
     public void agregarAlbum(Album album) {
         albumes.add(album);
     }
+
 }

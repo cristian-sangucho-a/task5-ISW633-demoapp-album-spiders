@@ -15,7 +15,7 @@ class Album {
 -disquera:String
 -artistas:String[]
 +agregarCancion()
-+verificarNoRepetido()
++verificarCancionRepetida()
 }
 class Cancion {
 -titulo: String
