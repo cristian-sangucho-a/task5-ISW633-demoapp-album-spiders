@@ -7,7 +7,7 @@ public class Main {
         Cancion cancion = new Cancion("pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
 
         usuarioTest.agregarAlbum("1", "2000", "polirecords", new String[]{""});
-        usuarioTest.agregarCancionaAlbumExistente("album1", cancion)
+        usuarioTest.agregarCancionAAlbumExistente("album1", cancion);
     }
 }
 
