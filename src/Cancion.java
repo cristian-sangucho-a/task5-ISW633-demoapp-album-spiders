@@ -20,6 +20,10 @@ public class Cancion {
         return this.getTitulo() == cancion.getTitulo() ;
     }
 
+    private String getTitulo() {
+        return titulo;
+    }
+
     @Override
     public String toString() {
         return "Titulo de la cancion='" + titulo + '\'' +

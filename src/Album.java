@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Album {
     private String titulo;
@@ -57,5 +58,10 @@ public class Album {
 
     public ArrayList<Cancion> getCanciones() {
         return canciones;
+    }
+
+    @Override
+    public String toString() {
+        return "Album[ titulo: " + titulo + "| anioDeanzamiento: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + Arrays.toString(artistas) + "| canciones: " + canciones +" ]";
     }
 }
