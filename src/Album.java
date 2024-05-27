@@ -54,4 +54,8 @@ public class Album {
         }
         return true;
     }
+
+    public ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
 }
