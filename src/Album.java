@@ -15,38 +15,22 @@ public class Album {
         this.artistas = artistas;
     }
 
+
     public void agregarCancion(Cancion cancionAAgregar){
         canciones.add(cancionAAgregar);
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String[] getArtistas() {
-        return artistas;
-    }
-
-    public String getDisquera() {
-        return disquera;
-    }
-
-    public String getAnioDeanzamiento() {
-        return anioDeanzamiento;
-    }
-
-    public void setArtista(String artista) {
-        artistas[artista.length() - 1] = artista;
-    }
 
     public boolean verificarCancionRepetida(Cancion cancionAAgregar) {
         if (estaCancionYaExiste(cancionAAgregar)) {
             return false;
         }
-
         return true;
     }
-
+    /*
+    * Este método comprueba la existencia de una canción en un album
+    *
+    * */
     private boolean estaCancionYaExiste(Cancion cancionAAgregar) {
         for (Cancion cancion : canciones) {
             if (cancion.equals(cancionAAgregar)) {
@@ -56,12 +40,22 @@ public class Album {
         return true;
     }
 
-    public ArrayList<Cancion> getCanciones() {
-        return canciones;
-    }
-
     @Override
     public String toString() {
         return "Album[ titulo: " + titulo + "| anioDeanzamiento: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + Arrays.toString(artistas) + "| canciones: " + canciones +" ]";
+    }
+    public ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAnioDeanzamiento() {
+        return anioDeanzamiento;
+    }
+
+    public void setArtista(String artista) {
+        artistas[artista.length() - 1] = artista;
     }
 }

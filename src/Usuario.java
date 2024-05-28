@@ -4,22 +4,40 @@ import java.util.ArrayList;
 public class Usuario {
     private String nombre;
     private ArrayList<Album> albumes;
+
     public Usuario(String nombre) {
         this.nombre = nombre;
         albumes = new ArrayList<Album>();
     }
 
-    public void agregarCancionAAlbumExistente(String albumDestino, String titulo, Duration duracion, String artista) {
-        Cancion cancionAAgregar = new Cancion(titulo, duracion, artista);
+    public void agregarAlbum(Album album) {
+        albumes.add(album);
+    }
+    /*
+    * Método para visualizar las canciones que disponemos en un album que ya ha sido creado
+    * */
+    public void verListaDeCancionesDelAlbum(String nombreDelAlbum) {
+        int indexAlbumConsulta = obtenerIndexAlbumDeListaPorNombre(nombreDelAlbum);
+        albumes.get(indexAlbumConsulta).getCanciones();
+    }
+
+    /*
+    * A través del indice del album, haciendo uso del metodo obtenerIndexAlbumDeListaPorNombre(), se agregará una canción.
+    * */
+
+    public void agregarCancionAAlbumExistente(String albumDestino, Cancion cancionAAgregar) {
         int index = obtenerIndexAlbumDeListaPorNombre(albumDestino);
         if (albumes.get(index) == null || albumes.get(index).verificarCancionRepetida(cancionAAgregar)){
             return;
         }
         albumes.get(index).agregarCancion(cancionAAgregar);
         albumes.get(index).setArtista(cancionAAgregar.getArtista());
-
     }
 
+    /*
+    * Este método me devuelve el índice de un album existente en la lista de albumes.
+    * De esta manera, se garantizza que se está trabajando sobre el mismo objeto creado (album)
+    * */
     public int obtenerIndexAlbumDeListaPorNombre(String nombreAlbum){
         for (int i = 0; i < albumes.size(); i++) {
             if (albumes.get(i).getTitulo().equals(nombreAlbum)){
@@ -29,10 +47,9 @@ public class Usuario {
         return -1;
     }
 
-    public void agregarAlbum(Album album) {
-        albumes.add(album);
-    }
-
+    /*
+    * Este método presentará los albumes que el usuario haya filtrado según el año escogido.
+    * */
     public ArrayList<Album> buscarAlbumesPorAnio(String anio) {
         ArrayList<Album> resultadoBusquedaPorAnio = new ArrayList<Album>();
         for (Album album: albumes){
@@ -42,8 +59,13 @@ public class Usuario {
         }
         return resultadoBusquedaPorAnio;
     }
-    public void verListaDeCancionesDelAlbum(Album album) {
-        int indexAlbumConsulta = obtenerIndexAlbumDeListaPorNombre(album.getTitulo());
-        albumes.get(indexAlbumConsulta).getCanciones();
+
+    public ArrayList<Album> mostrarAlbumes(){
+        ArrayList<Album> resultados = new ArrayList<Album>();
+        for (Album album: albumes){
+            resultados.add(album);
+            return resultados;
+        }
+        return resultados;
     }
 }
