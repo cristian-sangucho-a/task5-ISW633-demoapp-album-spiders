@@ -9,8 +9,18 @@ public class Usuario {
         albumes = new ArrayList<Album>();
     }
 
-    public void agregarCancionAAlbumExistente(String albumDestino, String titulo, Duration duracion, String artista) {
-        Cancion cancionAAgregar = new Cancion(titulo, duracion, artista);
+    public void agregarAlbum(Album album) {
+        albumes.add(album);
+    }
+    /*
+    * Método para visualizar las canciones que disponemos en un album que ya ha sido creado
+    * */
+
+    /*
+    * A través del indice del album, haciendo uso del metodo obtenerIndexAlbumDeListaPorNombre(), se agregará una canción.
+    * */
+
+    public void agregarCancionAAlbumExistente(String albumDestino, Cancion cancionAAgregar) {
         int index = obtenerIndexAlbumDeListaPorNombre(albumDestino);
         if (albumes.isEmpty() || albumes.get(index).verificarCancionRepetida(cancionAAgregar)){
             return;
@@ -20,6 +30,10 @@ public class Usuario {
 
     }
 
+    /*
+    * Este método me devuelve el índice de un album existente en la lista de albumes.
+    * De esta manera, se garantizza que se está trabajando sobre el mismo objeto creado (album)
+    * */
     public int obtenerIndexAlbumDeListaPorNombre(String nombreAlbum){
         for (int i = 0; i < albumes.size(); i++) {
             if (albumes.get(i).getTitulo().equals(nombreAlbum)){
@@ -29,10 +43,9 @@ public class Usuario {
         return -1;
     }
 
-    public void agregarAlbum(Album album) {
-        albumes.add(album);
-    }
-
+    /*
+    * Este método presentará los albumes que el usuario haya filtrado según el año escogido.
+    * */
     public ArrayList<Album> buscarAlbumesPorAnio(String anio) {
         ArrayList<Album> resultadoBusquedaPorAnio = new ArrayList<Album>();
         for (Album album: albumes){
@@ -45,4 +58,9 @@ public class Usuario {
     public ArrayList<Cancion> verListaDeCancionesDelAlbum(String titulo) {
         return albumes.get(obtenerIndexAlbumDeListaPorNombre(titulo)).getCanciones();
     }
+    public ArrayList<Album> mostrarAlbumes(){
+        return albumes;
+    }
 }
+
+
