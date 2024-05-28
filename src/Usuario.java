@@ -55,10 +55,12 @@ public class Usuario {
         }
         return resultadoBusquedaPorAnio;
     }
+
     public ArrayList<Cancion> verListaDeCancionesDelAlbum(String titulo) {
         return albumes.get(obtenerIndexAlbumDeListaPorNombre(titulo)).getCanciones();
     }
-    public ArrayList<Album> mostrarAlbumes(){
+
+    public ArrayList<Album> getAlbumes(){
         return albumes;
     }
 }

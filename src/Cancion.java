@@ -26,6 +26,6 @@ public class Cancion {
 
     @Override
     public String toString() {
-        return "Cancion= { Titulo de la cancion: " + titulo + "| Duracion=" + duracion + "| Artista=" + artista + " }";
+        return "Cancion[ titulo: " + titulo + "| Duracion=" + duracion + "| Artista=" + artista + " ]\n";
     }
 }

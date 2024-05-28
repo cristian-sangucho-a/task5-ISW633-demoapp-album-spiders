@@ -1,4 +1,5 @@
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -40,28 +41,36 @@ public class Main {
                     break;
                 case 2:
                     System.out.printf("==========ALBUMES DISPONIBLES=========== \n");
-                    usuarioTest.mostrarAlbumes();
+                    System.out.println(usuarioTest.getAlbumes());
                     System.out.println("Escribe el título de un álbum al que quieras agregar una canción:");
-                    sc.nextLine();  // Consumir la nueva línea
+                    sc.nextLine();
                     String tituloAlbum = sc.nextLine();
                     System.out.println("Nombre de la canción:");
                     String nombreCancion = sc.nextLine();
-                    System.out.printf("Duración en minutos: ");
+                    System.out.printf("Introduce los minutos de duracion: ");
                     int minutos = sc.nextInt();
-                    System.out.printf("Duración en segundos: ");
+                    System.out.printf("Introduce los segundos adicionales de duracion: ");
                     int segundos = sc.nextInt();
                     System.out.printf("Artista de la canción: ");
-                    sc.nextLine();  // Consumir la nueva línea
+                    sc.nextLine();
                     String artista = sc.nextLine();
                     Cancion cancionNueva = new Cancion(nombreCancion, Duration.ofMinutes(minutos).plusSeconds(segundos), artista);
                     usuarioTest.agregarCancionAAlbumExistente(tituloAlbum, cancionNueva);
                     System.out.println("Canción agregada exitosamente.");
                     break;
                 case 3:
-                    // Lógica para ver las canciones que tiene un álbum
+                    ArrayList<Album> albumes = usuarioTest.getAlbumes();
+                    for (int i = 0; i < albumes.size(); i++) {
+                        System.out.println( i +"."+ albumes.get(i));
+                    }
+                    System.out.printf("Escoge un album para ver sus canciones: ");
+                    int index = sc.nextInt();
+                    System.out.println(usuarioTest.verListaDeCancionesDelAlbum(albumes.get(index).getTitulo()));;
                     break;
                 case 4:
-                    // Lógica para buscar un álbum por año
+                    System.out.printf("Introduce el año a buscar: ");
+                    String anio = sc.nextLine();
+                    System.out.println(usuarioTest.buscarAlbumesPorAnio(anio));;
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");
