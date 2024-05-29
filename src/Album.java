@@ -81,6 +81,6 @@ public class Album {
 
     @Override
     public String toString() {
-        return "Album[ titulo: " + titulo + "| año: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + artistas + "| canciones: " + canciones +" ]\n";
+        return "| Titulo del album: " + titulo + "| año: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + artistas + "\n| canciones: " + canciones +" |\n";
     }
 }

@@ -1,4 +1,3 @@
-import java.time.Duration;
 import java.util.ArrayList;
 /**
  * Esta clase representa a un Usuario que tiene una lista de álbumes.
@@ -80,6 +79,12 @@ public class Usuario {
      */
     public ArrayList<Album> getAlbumes(){
         return albumes;
+    }
+
+    public void getAlbumesEnumerados(ArrayList<Album> albumes) {
+        for (int i = 0; i < albumes.size(); i++) {
+            System.out.println( i +"."+ albumes.get(i));
+        }
     }
 }
 

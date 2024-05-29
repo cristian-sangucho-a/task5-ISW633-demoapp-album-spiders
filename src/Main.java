@@ -5,14 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Usuario usuarioTest = new Usuario("Nombre de prueba");
-        //Album album = new Album("album1", "2000", "disquera1", new String[]{""});
-        Cancion cancion = new Cancion("pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
-
-        //usuarioTest.agregarAlbum(album);
-        //usuarioTest.agregarCancionAAlbumExistente("album1", "pompas de jabon", Duration.ofMinutes(5).plusSeconds(30), "Ricardo Arjona");
-
-        //usuarioTest.verListaDeCancionesDelAlbum("album1");
-        //System.out.println(usuarioTest.buscarAlbumesPorAnio("2000"));;
 
         Scanner sc = new Scanner(System.in);
         int opcion;
@@ -41,7 +33,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.printf("==========ALBUMES DISPONIBLES=========== \n");
-                    System.out.println(usuarioTest.getAlbumes());
+                    usuarioTest.getAlbumesEnumerados(usuarioTest.getAlbumes());
                     System.out.println("Escribe el título de un álbum al que quieras agregar una canción:");
                     sc.nextLine();
                     String tituloAlbum = sc.nextLine();
@@ -60,15 +52,14 @@ public class Main {
                     break;
                 case 3:
                     ArrayList<Album> albumes = usuarioTest.getAlbumes();
-                    for (int i = 0; i < albumes.size(); i++) {
-                        System.out.println( i +"."+ albumes.get(i));
-                    }
-                    System.out.printf("Escoge un album para ver sus canciones: ");
+                    usuarioTest.getAlbumesEnumerados(albumes);
+                    System.out.printf("Escoge el numero del album desplegado para ver sus canciones (ejemplo: 0): ");
                     int index = sc.nextInt();
                     System.out.println(usuarioTest.verListaDeCancionesDelAlbum(albumes.get(index).getTitulo()));;
                     break;
                 case 4:
                     System.out.printf("Introduce el año a buscar: ");
+                    sc.nextLine();
                     String anio = sc.nextLine();
                     System.out.println(usuarioTest.buscarAlbumesPorAnio(anio));;
                     break;
