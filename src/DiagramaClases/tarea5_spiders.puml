@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class Biblioteca {
+-ArrayList<Album> albumes;
++agregarAlbum(Album album);
++agregarCancionAAlbumExistente(String tituloAlbumDestino, Cancion cancionAAgregar);
++verListaDeCancionesDelAlbum(String tituloAlbum);
++obtenerIndexAlbumDeListaPorNombre(String tituloAlbum);
++buscarAlbumPorAnio();
++getAlbumes();
++getAlbumesEnumerados(ArrayList<Album> albumes);
+}
+
+class Album {
+-String titulo;
+-String anioDeanzamiento;
+-String disquera;
+-ArrayList<String> artistas;
+-ArrayList<Cancion> canciones;
++agregarCancion(Cancion cancionAAgregar);
++verificarCancionRepetida(Cancion cancionAAgregar);
++estaCancionYaExiste(Cancion cancionAAgregar);
++getCanciones();
++getTitulo();
++getAnioDeanzamiento();
++setArtista(String artista);
+}
+
+class Cancion {
+-String titulo;
+-Duration duracion;
+-String artista;
++getArtista();
++getTitulo();
++equals(Cancion cancion);
+}
+
+Biblioteca "1" --> "*" Album
+Album  o--  Cancion
+
+
+@enduml
