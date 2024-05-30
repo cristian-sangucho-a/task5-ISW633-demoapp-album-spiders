@@ -1,7 +1,9 @@
+package logic;
+
 import java.time.Duration;
 
 /**
- * Esta clase representa a una Cancion con un título, duración y artista.
+ * Esta clase representa a una logic.Cancion con un titulo, duracion y artista.
  */
 public class Cancion {
     private final String titulo;
@@ -9,10 +11,10 @@ public class Cancion {
     private final String artista;
 
     /**
-     * Constructor para la clase Cancion.
-     * @param titulo El título de la canción.
-     * @param duracion La duración de la canción.
-     * @param artista El artista de la canción.
+     * Constructor para la clase logic.Cancion.
+     * @param titulo El titulo de la cancion.
+     * @param duracion La duracion de la cancion.
+     * @param artista El artista de la cancion.
      */
     public Cancion(String titulo, Duration duracion, String artista) {
         this.titulo = titulo;
@@ -25,9 +27,9 @@ public class Cancion {
     }
 
     /**
-     * Compara esta canción con otra canción.
-     * @param cancion La canción a comparar.
-     * @return true si los títulos de las canciones son iguales, false en caso contrario.
+     * Compara esta cancion con otra cancion.
+     * @param cancion La cancion a comparar.
+     * @return true si los titulos de las canciones son iguales, false en caso contrario.
      */
     public boolean equals(Cancion cancion) {
         return this.getTitulo().equals(cancion.getTitulo()) ;

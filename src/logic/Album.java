@@ -1,20 +1,22 @@
+package logic;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+
 /**
- * Esta clase representa a un Album que tiene una lista de canciones y artistas.
+ * Esta clase representa a un logic.Album que tiene una lista de canciones y artistas.
  */
 public class Album {
     private String titulo;
-    private  String anioDeanzamiento;
-    private  String disquera;
+    private String anioDeanzamiento;
+    private String disquera;
     private ArrayList<String> artistas;
     private ArrayList<Cancion> canciones;
     /**
-     * Constructor para la clase Album.
-     * @param titulo El título del álbum.
-     * @param anioDeanzamiento El año de lanzamiento del álbum.
-     * @param disquera La disquera que publicó el álbum.
-     * @param artistas Los artistas que contribuyeron al álbum.
+     * Constructor para la clase logic.Album.
+     * @param titulo El titulo del album.
+     * @param anioDeanzamiento El anio de lanzamiento del album.
+     * @param disquera La disquera que publico el album.
+     * @param artistas Los artistas que contribuyeron al album.
      */
     public Album(String titulo, String anioDeanzamiento, String disquera, String[] artistas) {
         this.titulo = titulo;
@@ -24,16 +26,16 @@ public class Album {
         canciones = new ArrayList<Cancion>();
     }
     /**
-     * Agrega una canción a la lista de canciones del álbum.
-     * @param cancionAAgregar La canción a agregar.
+     * Agrega una cancion a la lista de canciones del album.
+     * @param cancionAAgregar La cancion a agregar.
      */
     public void agregarCancion(Cancion cancionAAgregar){
         canciones.add(cancionAAgregar);
     }
     /**
-     * Verifica si una canción ya existe en la lista de canciones del álbum.
-     * @param cancionAAgregar La canción a verificar.
-     * @return true si la canción ya existe, false en caso contrario.
+     * Verifica si una cancion ya existe en la lista de canciones del album.
+     * @param cancionAAgregar La cancion a verificar.
+     * @return true si la cancion ya existe, false en caso contrario.
      */
     public boolean verificarCancionRepetida(Cancion cancionAAgregar) {
         if (estaCancionYaExiste(cancionAAgregar)) {
@@ -42,9 +44,9 @@ public class Album {
         return true;
     }
     /**
-     * Verifica si una canción ya existe en la lista de canciones del álbum.
-     * @param cancionAAgregar La canción a verificar.
-     * @return true si la canción ya existe, false en caso contrario.
+     * Verifica si una cancion ya existe en la lista de canciones del album.
+     * @param cancionAAgregar La cancion a verificar.
+     * @return true si la cancion ya existe, false en caso contrario.
      */
     private boolean estaCancionYaExiste(Cancion cancionAAgregar) {
         for (Cancion cancion : canciones) {
@@ -63,14 +65,6 @@ public class Album {
         return titulo;
     }
 
-    public ArrayList<String> getArtistas() {
-        return artistas;
-    }
-
-    public String getDisquera() {
-        return disquera;
-    }
-
     public String getAnioDeanzamiento() {
         return anioDeanzamiento;
     }
@@ -81,6 +75,6 @@ public class Album {
 
     @Override
     public String toString() {
-        return "| Titulo del album: " + titulo + "| año: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + artistas + "\n| canciones: " + canciones +" |\n";
+        return "| Titulo del album: " + titulo + "| anio: " + anioDeanzamiento + "| disquera: " + disquera + "| artistas: " + artistas + "\n| canciones: " + canciones +" |\n";
     }
 }
