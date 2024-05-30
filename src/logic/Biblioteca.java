@@ -8,21 +8,20 @@ public class Biblioteca {
     private ArrayList<Album> albumes;
     /**
      * Constructor para la clase logic.Biblioteca.
-     * @param nombre El nombre del usuario.
      */
     public Biblioteca() {
         albumes = new ArrayList<Album>();
     }
 
     /**
-     * Agrega un album a la lista de albumes del usuario.
+     * Agrega un album a la lista de albumes de la biblioteca perteneciente al usuario que ejecute la aplicacion.
      * @param album El album a agregar.
      */
     public void agregarAlbum(Album album) {
         albumes.add(album);
     }
     /**
-     * Agrega una cancion a un album existente en la lista de albumes del usuario.
+     * Agrega una cancion a un album existente en la lista de albumes de la biblioteca perteneciente al usuario que ejecute la aplicacion.
      * @param tituloAlbumDestino El nombre del album al que se agregara la cancion.
      * @param cancionAAgregar La cancion a agregar.
      */
@@ -36,7 +35,7 @@ public class Biblioteca {
     }
 
     /**
-     * Obtiene el indice de un album en la lista de albumes del usuario por su nombre.
+     * Obtiene el indice de un album en la lista de albumes de la biblioteca del usuario del sistema por su nombre.
      * @param tituloAlbum El nombre del album.
      * @return El indice del album en la lista, o -1 si no se encuentra el album.
      */
@@ -50,7 +49,7 @@ public class Biblioteca {
     }
 
     /**
-     * Busca albumes en la lista de albumes del usuario por su anio de lanzamiento.
+     * Busca albumes en la lista de albumes de la biblioteca del usuario de la aplicacion por su anio de lanzamiento.
      * @param anio El anio de lanzamiento de los albumes a buscar.
      * @return Una lista de albumes que coinciden con el anio de lanzamiento proporcionado.
      */
@@ -64,7 +63,7 @@ public class Biblioteca {
         return resultadoBusquedaPorAnio;
     }
     /**
-     * Obtiene la lista de canciones de un album en la lista de albumes del usuario.
+     * Obtiene la lista de canciones de un album en la lista de albumes de la biblioteca perteneciente al usuario que ejecute la aplicacion.
      * @param tituloAlbum El tituloAlbum del album.
      * @return La lista de canciones del album.
      */
@@ -72,8 +71,8 @@ public class Biblioteca {
         return albumes.get(obtenerIndexAlbumDeListaPorNombre(tituloAlbum)).getCanciones();
     }
     /**
-     * Obtiene la lista de albumes del usuario.
-     * @return La lista de albumes del usuario.
+     * Obtiene la lista de albumes de la biblioteca que es del usuario del sistema.
+     * @return La lista de albumes de la biblioteca que es del usuario del sistema.
      */
     public ArrayList<Album> getAlbumes(){
         return albumes;
