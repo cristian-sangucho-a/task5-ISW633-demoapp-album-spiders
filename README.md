@@ -10,3 +10,5 @@ Sexto semestre
 4. Version del JDK: JDK22 de Oracle
 5. IDE: desarrollado en IntelliJ Idea
 6. Sistema operativo: Windows 10 y superior
+
+Nota: para la documentación del sistema, abrir el archivo index.html en un navegador disponible en la carpeta JavaDoc previamente descargada.
